@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #3713ec;
+  --color-primary-green: #13ec5b;
+  --color-primary-blue: #135bec;
+  --color-background-light: #f6f6f8;
+  --color-background-dark: #131022;
+
+  --font-display: var(--font-manrope), sans-serif;
+  --font-serif: var(--font-newsreader), serif;
+  --font-space: var(--font-space-grotesk), sans-serif;
+
+  --radius-default: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+:root {
+  --background: #f6f6f8;
+  --foreground: #131022;
+}
+
+.dark {
+  --background: #131022;
+  --foreground: #f6f6f8;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-display);
+  min-height: 100dvh;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
